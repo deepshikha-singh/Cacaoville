@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="uza - Model Agency HTML5 Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Uza - Creative Agency HTML5 Template</title>
+
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="wrapper">
+            <div class="cssload-loader"></div>
+        </div>
+    </div>
+
+    <div class="top-search-area">
+
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <button type="button" class="btn close-btn" data-dismiss="modal"><i
+                                class="fa fa-times"></i></button>
+
+                        <form action="https://preview.colorlib.com/theme/uza/index.html" method="post">
+                            <input type="search" name="top-search-bar" class="form-control"
+                                placeholder="Search and hit enter...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header-area">
+
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+
+                <nav class="classy-navbar justify-content-between" id="uzaNav">
+
+                    <a class="nav-brand" href="{%url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <div class="classy-menu">
+
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="current-item"><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'product' %}">Product</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer-area section-padding-80-0">
+        <div class="container">
+            <div class="row justify-content-between">
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+
+                        <h4 class="widget-title">Contact Us</h4>
+
+                        <div class="footer-content mb-15">
+                            <h3>(+65) 1234 5678</h3>
+                            <p>40 Baria Sreet 13/2 NY City, US <br> <a
+                                    href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="69010c050506470a0605061b05000b290e04080005470a0604">[email&#160;protected]</a>
+                            </p>
+                        </div>
+                        <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
+                            Closed on Weekends</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+
+                        <h4 class="widget-title">Quick Link</h4>
+
+                        <nav>
+                            <ul class="our-link">
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{% url 'signup' %}">Forum Registeration</a></li>
+                                <li><a href="{% url 'signin' %}">Forum Sign In</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+
+                        <h4 class="widget-title">Resources</h4>
+
+                        <nav>
+                            <ul class="our-link">
+                                <li><a href="#">Customer Support</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Media &amp; Press</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+
+                        <h4 class="widget-title">About Us</h4>
+                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
+
+                        <div class="copywrite-text mb-30">
+                            <p>&copy; Copyright 2018 <a href="#">Colorlib</a>.</p>
+                        </div>
+
+                        <div class="footer-social-info">
+                            <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top"
+                                title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a href="#" class="instagram" data-toggle="tooltip" data-placement="top"
+                                title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i
+                                    class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px;">
+
+                Copyright &copy;<script data-cfasync="false"
+                    src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                    aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/uza.bundle.js' %}"></script>
+
+    <script src="{% static 'js/default-assets/active.js' %}"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+</html>
