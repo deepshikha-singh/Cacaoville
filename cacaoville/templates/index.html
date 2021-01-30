@@ -4,7 +4,7 @@
 <section class="welcome-area">
     <div class="welcome-slides owl-carousel">
     {% if Sliders %}
-        {% for slider in Sliders %}
+        {% for Slider in Sliders %}
         <div class="single-welcome-slide">
             <div class="background-curve">        
             </div>
@@ -15,16 +15,15 @@
                         <div class="col-12 col-md-6">
                             <div class="welcome-text">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">{{Slider.title}}</h2>
-                                <h5 data-animation="fadeInUp" data-delay="400ms">“All you need is love. 
-                                But a little chocolate now and then doesn't hurt.”</h5>
-                                <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp"
+                                <h5 data-animation="fadeInUp" data-delay="400ms">{{Slider.description}}</h5>
+                                <a href="{{Slider.link}}" class="btn uza-btn btn-2" data-animation="fadeInUp"
                                     data-delay="700ms">Start Exploring</a>
                             </div>
                         </div>
 
                         <div class="col-12 col-md-6">
                             <div class="welcome-thumbnail">
-                                <img src="{% static 'img/slider1.webp' %}" alt="" data-animation="slideInRight" data-delay="400ms">
+                                <img src="{{Slider.img.url}}" alt="" data-animation="slideInRight" data-delay="400ms">
                             </div>
                         </div>
                     </div>
@@ -38,12 +37,13 @@
 
 
 <section class="uza-about-us-area">
+{% if companies %}
     <div class="container">
         <div class="row align-items-center">
-
+        {% for company in companies %}
             <div class="col-12 col-md-6">
                 <div class="about-us-thumbnail mb-80">
-                    <img src="{% static 'img/bg-img/2.jpg' %}" alt="">
+                    <img src="{{company.img.url}}}" alt="">
 
                     <div class="uza-video-area hi-icon-effect-8">
                         <a href="https://www.youtube.com/watch?v=sSakBz_eYzQ" class="hi-icon video-play-btn"><i
@@ -51,25 +51,19 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6">
                 <div class="about-us-content mb-80">
-                    <h2>About  &amp; Cocoaville</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut
-                        labore et dolore magna.</p>
-                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata
-                        sanctus est Lorem ipsum dolor sit amet ipsumlor eut consetetur sadipscing elitr, sed diam
-                        nonumy eirmod tempor invidunt labore et dolore magna
-                        liquyam erat.</p>
-                    <a href="#" class="btn uza-btn btn-2 mt-4">Start Exploring</a>
+                    <h2>About &amp; Cocoaville</h2>
+                    <a href="{{company.link}}" class="btn uza-btn btn-2 mt-4">Start Exploring</a>
                 </div>
             </div>
+        {% endfor %}    
         </div>
     </div>
-
     <div class="about-bg-pattern">
-        <img src="{% static 'img/core-img/curve-2.png' %}" alt="">
+        <img src="" alt="">
     </div>
+{% endif %}
 </section>
 
 <section class="uza-portfolio-area section-padding-80">
@@ -86,141 +80,23 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-
             <div class="portfolio-sildes owl-carousel">
-
+            {% if chocolates %}
+                {% for chocolate in chocolates %}
                 <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/25.jpg' %}" alt="">
+                    <img src="{{chocolate.img.url}}" alt="">
 
                     <div class="overlay-effect">
-                        <h4>Fermenting and Drying</h4>
-                        <p>The wet beans are then transported to a facility so they can be fermented and dried.[19][22] The farmer removes the 
-                        beans from the pods, packs them into boxes or heaps them into piles, then covers them with mats or banana leaves for three to seven 
-                        days.</p>
+                        <h4>{{chocolate.name}}</h4>
+                        <p>{{chocolate.Ingredients}}</p>
                     </div>
 
                     <div class="view-more-btn">
                         <a href="#"><i class="arrow_right"></i></a>
                     </div>
                 </div>
-
-                <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/26.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Cultivation of Cocoa Fruit</h4>
-                        <p>A cocoa pod (fruit) is about 7 to 8 inches long and has a rough, leathery rind about 2 to 3 cm thick filled with 
-                        sweet, mucilaginous pulp with a lemonade-like taste enclosing 30 to 50 large seeds that are fairly soft and a pale 
-                        lavender to dark brownish purple color.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-                <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/27.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Collecting Cocoa Pulp</h4>
-                        <p>During harvest, the pods are opened, the seeds are kept, and the empty pods are discarded and the pulp made into 
-                        juice. The seeds are placed where they can ferment.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-                 <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/30.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Molded Chocolate Candies</h4>
-                        <p>Molded chocolates make a nice dessert as well as a great gift for holidays, birthdays, and other special occasions. 
-                        Whether you want to use high-quality or standard chocolate.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-
-                 <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/32.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Molded Chocolate Candies</h4>
-                        <p>Molded chocolates make a nice dessert as well as a great gift for holidays, birthdays, and other special occasions. 
-                        Whether you want to use high-quality or standard chocolate.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-
-                 <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/35.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Molded Chocolate Candies</h4>
-                        <p>Molded chocolates make a nice dessert as well as a great gift for holidays, birthdays, and other special occasions. 
-                        Whether you want to use high-quality or standard chocolate.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-
-                <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/28.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Fermenting and Drying</h4>
-                        <p>The wet beans are then transported to a facility so they can be fermented and dried.[19][22] The farmer removes the 
-                        beans from the pods, packs them into boxes or heaps them into piles, then covers them with mats or banana leaves for three to 
-                        seven days.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-                <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/33.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Different Chocolates</h4>
-                        <p>Milk chocolate is a classic that we all know and love from childhood. With its light brown color, creamy texture, 
-                        and sweet flavor.White chocolate is easy to identify because of its cream or ivory color. It is made by combining 
-                        sugar, cocoa butter, milk, vanilla, and lecithin. Dark chocolate, with its notable deep brown color, is the second most 
-                        popular type of chocolate.</p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
-
-                <div class="single-portfolio-slide">
-                    <img src="{% static 'img/bg-img/34.jpg' %}" alt="">
-
-                    <div class="overlay-effect">
-                        <h4>Chocolate</h4>
-                        <p>Chocolate coated choco-bars described as a "caramel and nougat" mix covered with "smooth milk chocolate" </p>
-                    </div>
-
-                    <div class="view-more-btn">
-                        <a href="#"><i class="arrow_right"></i></a>
-                    </div>
-                </div>
+                {% endfor %}
+            {% endif %}
             </div>
         </div>
     </div>

@@ -9,7 +9,10 @@ from .models import *
 # Create your views here.
 def index(request):
     Sliders = Slider.objects.all()
-    return render(request, 'index.html', {'Sliders': Sliders})
+    flavors = flavor.objects.all()
+    chocolates = chocolate.objects.all()
+    companies = abouts.objects.all()
+    return render(request, 'index.html', {'Sliders': Sliders, 'flavors': flavors, 'chocolates':chocolates, 'companies': companies})
 
 def about(request):
     return render(request, 'about.html')

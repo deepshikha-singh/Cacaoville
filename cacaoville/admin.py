@@ -4,5 +4,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Slider)
-
-
+admin.site.register(flavor)
+admin.site.register(chocolate)
+admin.site.register(abouts)
